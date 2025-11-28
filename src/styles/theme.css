@@ -1,0 +1,679 @@
+:root {
+  /* Песочные тона */
+  --sand-soft: #f7f1e9;      /* очень светлый песок — можно оставить для градиентов и акцентов */
+  --sand-base: #f3e9dc;      /* базовый песочный */
+  --page-bg: #f0e2d3;        /* НОВЫЙ: фон страницы, чуть темнее, чтобы стекло читалось лучше */
+
+  /* Золото и графит */
+  --gold-soft: #d8b56a;
+  --graphite: #1c1c1c;
+
+  /* Стекло — делаем плотнее и чуть более «молочным» */
+  --glass-bg: rgba(255, 255, 255, 0.25);   /* было 0.25 — почти не видно */
+  --glass-border: rgba(255, 255, 255, 0.10); 
+  --glass-blur: 18px;                      /* было 14px, чуть усилили блюр */
+
+  /* Текст */
+  --text-primary: #1a1a1a;
+  --text-muted: #4c4c4c;
+}
+
+/* ============================
+   FLAT LIQUID GLASS — Golden Desert
+   ============================ */
+
+.btn-liquid-gold {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0.7rem 1.6rem;
+  border-radius: 9999px;
+  font-weight: 500;
+  isolation: isolate;
+
+  /* Более плоский, прозрачный фон */
+  background: linear-gradient(
+    180deg,
+    rgba(236, 210, 158, 0.18) 0%,
+    rgba(219, 181, 118, 0.22) 55%,
+    rgba(201, 158, 90, 0.24) 100%
+  );
+
+  /* Стекло, не пластик */
+  -webkit-backdrop-filter: blur(32px) saturate(170%);
+  backdrop-filter: blur(32px) saturate(170%);
+
+  /* Тонкая светлая окантовка */
+  border: 1px solid rgba(255, 245, 220, 0.40);
+
+  /* Мягкая, не крикливая тень */
+  box-shadow:
+    0 10px 18px rgba(0, 0, 0, 0.14);
+
+  transition: all 0.28s ease;
+}
+
+/* Верхний мягкий highlight — но менее жирный */
+.btn-liquid-gold::before {
+  content: "";
+  position: absolute;
+  inset: 1px 1px auto 1px;
+  height: 55%;
+  border-radius: inherit;
+  background: radial-gradient(
+    ellipse at top,
+    rgba(255, 255, 255, 0.7) 0%,
+    rgba(255, 255, 255, 0.25) 35%,
+    rgba(255, 255, 255, 0.0) 100%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Лёгкое «брюшко» — внутренняя полупрозрачная полоска */
+.btn-liquid-gold::after {
+  content: "";
+  position: absolute;
+  left: 10%;
+  right: 10%;
+  top: 48%;
+  height: 40%;
+  border-radius: 9999px;
+  background: linear-gradient(
+    180deg,
+    rgba(143, 102, 36, 0.22),
+    rgba(143, 102, 36, 0.08)
+  );
+  opacity: 0.35;
+  filter: blur(4px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Текст — просто поверх стекла */
+.btn-liquid-gold > span {
+  position: relative;
+  z-index: 2;
+  color: #241b0d;
+}
+
+/* Ховер — не надуваем кнопку, а слегка усиливаем свет */
+.btn-liquid-gold:hover {
+  transform: translateY(-1px);
+  box-shadow:
+    0 14px 22px rgba(0, 0, 0, 0.18);
+  background: linear-gradient(
+    180deg,
+    rgba(236, 210, 158, 0.22) 0%,
+    rgba(219, 181, 118, 0.26) 55%,
+    rgba(201, 158, 90, 0.30) 100%
+  );
+}
+
+/* Клик — только чуть прижали */
+.btn-liquid-gold:active {
+  transform: translateY(0);
+  box-shadow:
+    0 8px 14px rgba(0, 0, 0, 0.20);
+}
+
+
+/* ============================
+   OUTCOMES / RESULTS BLOCK
+   ============================ */
+
+.outcomes-shell {
+  border-radius: 32px;
+  padding: 2.5rem 1.5rem 2.75rem;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow: 0 30px 80px rgba(15, 23, 42, 0.18);
+  backdrop-filter: blur(26px);
+}
+
+/* Центральная карточка */
+
+.outcomes-central-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: 2rem;
+  align-items: stretch;
+  margin-bottom: 2.5rem;
+}
+
+@media (max-width: 900px) {
+  .outcomes-central-card {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.outcomes-central-card-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.outcomes-central-tag {
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.outcomes-central-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.outcomes-central-text {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-secondary, #5b5b5b);
+}
+
+.outcomes-central-list {
+  margin: 0;
+  padding-left: 1.1rem;
+  font-size: 0.9rem;
+  color: var(--text-secondary, #5b5b5b);
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+/* Правая мини-карточка UI */
+
+.outcomes-central-ui {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.outcomes-central-ui-window {
+  width: 100%;
+  max-width: 320px;
+  border-radius: 24px;
+  padding: 1.1rem 1rem;
+  background: radial-gradient(
+    circle at top,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(248, 241, 233, 0.95) 45%,
+    rgba(244, 228, 206, 0.9) 100%
+  );
+  border: 1px solid rgba(250, 245, 235, 0.7);
+  box-shadow: 0 20px 60px rgba(15, 23, 42, 0.25);
+}
+
+.outcomes-ui-header {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-bottom: 0.9rem;
+}
+
+.outcomes-ui-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 9999px;
+  background: rgba(0, 0, 0, 0.12);
+}
+
+.outcomes-ui-title {
+  margin-left: auto;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.outcomes-ui-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.outcomes-ui-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+}
+
+.outcomes-ui-line-muted {
+  opacity: 0.8;
+}
+
+.outcomes-ui-label {
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.outcomes-ui-pill {
+  padding: 0.25rem 0.7rem;
+  border-radius: 9999px;
+  font-size: 0.78rem;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(15, 23, 42, 0.06);
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.18);
+}
+
+/* Стек бегущих рядов */
+
+.outcomes-marquee-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+/* «Окошко» для каждого ряда */
+
+.outcomes-marquee-viewport {
+  position: relative;
+  overflow: hidden;
+}
+
+/* легкое затемнение краёв как у 11x */
+.outcomes-marquee-viewport::before,
+.outcomes-marquee-viewport::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 64px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.outcomes-marquee-viewport::before {
+  left: 0;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 0)
+  );
+}
+
+.outcomes-marquee-viewport::after {
+  right: 0;
+  background: linear-gradient(
+    to left,
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 0)
+  );
+}
+
+/* Сам ряд, анимируем внутрь окна */
+
+.outcomes-marquee-row {
+  display: inline-flex;
+  gap: 0.75rem;
+  padding: 0.25rem 0;
+  will-change: transform;
+  animation: outcomes-marquee 26s linear infinite;
+}
+
+.outcomes-marquee-viewport--reverse .outcomes-marquee-row {
+  animation-direction: reverse;
+}
+
+/* Отдельный чип */
+
+.outcomes-pill {
+  border-radius: 9999px;
+  padding: 0.4rem 1.1rem;
+  font-size: 0.8rem;
+  line-height: 1.2;
+  white-space: nowrap;
+
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(15, 23, 42, 0.06);
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.12);
+
+  color: var(--text-muted);
+}
+
+@keyframes outcomes-marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+/* HOW IT WORKS — лента шагов */
+.how-rail-shell {
+  position: relative;
+  padding: 1.5rem 0;
+}
+
+.how-rail-line {
+  position: absolute;
+  left: 6%;
+  right: 6%;
+  top: 50%;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.6) 20%,
+    rgba(216, 181, 106, 0.9) 50%,
+    rgba(255, 255, 255, 0.6) 80%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  opacity: 0.9;
+}
+
+.how-rail-dot {
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.18);
+}
+
+.how-rail-dot-number {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #241b0d;
+}
+
+/* HOW IT WORKS — карточки шагов */
+.how-card {
+  border-radius: 1.75rem;
+  background: rgba(255, 255, 255, 0.68);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(14px);
+  padding: 1.2rem 1.3rem;
+  min-height: 15rem;
+  transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.22s ease;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.08);
+}
+
+.how-card:hover {
+  transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.16);
+}
+
+.how-card-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.how-card-label--accent {
+  color: #b5893b; /* мягкое золото, можно подогнать под var(--gold-soft) */
+}
+
+
+
+/* ============================
+   PRICING / WHO-FOR LADDER
+   ============================ */
+
+.pricing-track-shell {
+  position: relative;
+  display: grid;
+  gap: 1rem;
+  padding-left: 1.75rem;
+}
+
+/* Вертикальная линия – трек роста тарифов */
+.pricing-track-shell::before {
+  content: "";
+  position: absolute;
+  left: 0.7rem;
+  top: 0.25rem;
+  bottom: 0.25rem;
+  width: 2px;
+  border-radius: 999px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.9) 18%,
+    rgba(216, 181, 106, 0.95) 50%,
+    rgba(255, 255, 255, 0.85) 82%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  opacity: 0.9;
+}
+
+.pricing-card-wrapper {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  gap: 0.9rem;
+}
+
+/* Точка на треке возле каждой карточки */
+.pricing-track-dot {
+  flex: 0 0 auto;
+  width: 0.95rem;
+  height: 0.95rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(255, 255, 255, 1);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  margin-top: 1.1rem;
+}
+
+/* Стеклянная карточка тарифа */
+.pricing-card {
+  flex: 1 1 auto;
+  border-radius: 1.6rem;
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(14px);
+  padding: 1rem 1.3rem;
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.1);
+  transition: transform 0.22s ease, box-shadow 0.22s ease,
+    background 0.22s ease;
+}
+
+.pricing-card:hover {
+  transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 20px 44px rgba(0, 0, 0, 0.18);
+}
+
+/* Типографика внутри карточек */
+.pricing-card-segment {
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.1rem;
+}
+
+.pricing-card-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.pricing-card-subtitle {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+}
+
+.pricing-card-text {
+  margin-top: 0.55rem;
+  font-size: 0.8rem;
+  line-height: 1.4;
+  color: var(--text-secondary);
+}
+
+.pricing-card-price {
+  margin-top: 0.7rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+/* Бейдж в правом верхнем углу карточки */
+.pricing-card-badge {
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  background: linear-gradient(
+    180deg,
+    rgba(236, 210, 158, 0.35),
+    rgba(201, 158, 90, 0.4)
+  );
+  border: 1px solid rgba(255, 245, 220, 0.8);
+  color: #241b0d;
+  white-space: nowrap;
+}
+
+/* ===========================
+   DEMO HERO — Мария и Пётр
+   =========================== */
+
+.demo-hero-wrapper {
+  position: relative;
+  min-height: 160vh; /* даём пространство, чтобы был эффект скролла */
+}
+
+/* Фоновая картинка */
+.demo-hero-image {
+  position: sticky;
+  top: 88px; /* чуть ниже стеклянного хедера */
+  margin-inline: auto;
+  width: min(1040px, 100vw - 64px);
+  aspect-ratio: 16 / 9;
+  border-radius: 40px;
+  overflow: hidden;
+  box-shadow: 0 26px 70px rgba(0, 0, 0, 0.28);
+  background:
+    radial-gradient(circle at top, rgba(255, 255, 255, 0.18), transparent 55%),
+    rgba(0, 0, 0, 0.48);
+}
+
+/* Обёртка под карточку */
+.demo-hero-card-outer {
+  position: absolute;
+  left: 50%;
+  bottom: min(12vh, 112px);
+  width: min(1040px, 100vw - 64px);
+  transform: translateX(-50%);
+  pointer-events: none; /* чтобы не блокировать скролл */
+}
+
+/* Сама стеклянная карточка */
+.demo-hero-card-inner {
+  pointer-events: auto;
+  border-radius: 32px;
+  background: rgba(255, 253, 250, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  -webkit-backdrop-filter: blur(22px) saturate(160%);
+  backdrop-filter: blur(22px) saturate(160%);
+  box-shadow: 0 22px 70px rgba(0, 0, 0, 0.2);
+}
+
+/* ===========================
+   Аудио-кнопка и волны
+   =========================== */
+
+.demo-audio-button {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  border-radius: 999px;
+  padding: 12px 16px 12px 20px;
+  background: linear-gradient(
+    180deg,
+    rgba(236, 210, 158, 0.18) 0%,
+    rgba(219, 181, 118, 0.22) 55%,
+    rgba(201, 158, 90, 0.24) 100%
+  );
+  border: 1px solid rgba(255, 245, 220, 0.6);
+  -webkit-backdrop-filter: blur(24px) saturate(170%);
+  backdrop-filter: blur(24px) saturate(170%);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.16);
+  cursor: pointer;
+}
+
+.demo-audio-button--active {
+  box-shadow: 0 16px 28px rgba(0, 0, 0, 0.22);
+}
+
+.demo-audio-wave {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.demo-audio-bar {
+  width: 3px;
+  height: 12px;
+  border-radius: 999px;
+  background: rgba(143, 102, 36, 0.52);
+  transform-origin: center bottom;
+  animation: demoWave 1.1s ease-in-out infinite;
+  animation-play-state: paused;
+}
+
+/* когда играет — волны двигаются */
+.demo-audio-wave--playing .demo-audio-bar {
+  animation-play-state: running;
+}
+
+.demo-audio-bar:nth-child(4n + 0) {
+  height: 20px;
+  animation-delay: 0s;
+}
+.demo-audio-bar:nth-child(4n + 1) {
+  height: 16px;
+  animation-delay: 0.12s;
+}
+.demo-audio-bar:nth-child(4n + 2) {
+  height: 22px;
+  animation-delay: 0.24s;
+}
+.demo-audio-bar:nth-child(4n + 3) {
+  height: 14px;
+  animation-delay: 0.36s;
+}
+
+@keyframes demoWave {
+  0% {
+    transform: scaleY(0.45);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}
+
+.demo-audio-play-circle {
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  background: radial-gradient(circle at 20% 10%, #fff7e2 0%, #f0cc89 40%, #c48e39 100%);
+  box-shadow: 0 10px 18px rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.demo-audio-play-icon {
+  margin-left: 2px;
+  border-style: solid;
+  border-width: 7px 0 7px 11px;
+  border-color: transparent transparent transparent #241b0d;
+}

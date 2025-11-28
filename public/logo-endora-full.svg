@@ -1,0 +1,52 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 340 120"
+  role="img"
+  aria-labelledby="title desc"
+>
+  <title id="title">Endora AI logo</title>
+  <desc id="desc">Liquid E mark with Endora AI wordmark</desc>
+
+  <defs>
+    <linearGradient id="e-stroke" x1="20" y1="20" x2="100" y2="100" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FDF7EF" />
+      <stop offset="40%" stop-color="#F0DFC7" />
+      <stop offset="100%" stop-color="#D3A771" />
+    </linearGradient>
+
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow
+        dx="0"
+        dy="4"
+        stdDeviation="8"
+        flood-color="#F1D1A3"
+        flood-opacity="0.55"
+      />
+    </filter>
+  </defs>
+
+  <g filter="url(#glow)">
+    <path
+      d="M 88 24 H 40 V 60 H 76 H 40 V 96 H 88"
+      fill="none"
+      stroke="url(#e-stroke)"
+      stroke-width="18"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+  </g>
+
+  <g transform="translate(130, 0)">
+    <text
+      x="0"
+      y="60"
+      fill="#E2C9A5"
+      font-size="26"
+      font-family="system-ui, -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', sans-serif"
+      letter-spacing="4"
+      dominant-baseline="middle"
+    >
+      ENDORA AI
+    </text>
+  </g>
+</svg>
