@@ -1,36 +1,153 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Endora AI Website
 
-## Getting Started
+> Маркетинговый сайт платформы цифровых сотрудников Endora AI  
+> https://endora-ai.ru/
 
-First, run the development server:
+Endora AI - это цифровые сотрудники для реального бизнеса.  
+Мария отвечает на звонки и сообщения, Пётр ищет клиентов и дожимает лиды до встречи. Они говорят голосом, пишут письма и встраиваются в процессы компании.
+
+Этот репозиторий содержит фронтенд публичного сайта Endora AI: лендинг, страницы продуктов, тарифы, блог и служебные страницы.
+
+---
+
+## О проекте
+
+Цель сайта Endora AI:
+
+- объяснить, что такое цифровые сотрудники и чем они отличаются от "очередного бота";
+- показать конкретные роли:
+  - **Мария** - цифровой администратор для входящих коммуникаций;
+  - **Пётр** - цифровой продавец и AI-SDR для продаж и аутрича;
+- на языке бизнеса донести:
+  - какие результаты можно получить (без найма новой смены, без выгорания);
+  - как выглядит внедрение шаг за шагом;
+  - какие есть тарифы от простого шаблонного бота до Digital Dept.
+
+Репозиторий нужен разработчикам и команде продукта как точка входа в фронтенд Endora AI.
+
+---
+
+## Основные разделы сайта
+
+Сайт построен как линейный, но насыщенный лендинг с навигацией по ключевым разделам.
+
+**Навигация:**
+
+- Главная
+- Продукты
+- Компания
+- Блог
+- Начать (форма/контакт для консультации)
+
+**Главная страница включает:**
+
+- Хиро блок  
+  "Цифровые сотрудники для реального бизнеса"  
+  Короткое объяснение, кто такие Мария и Пётр и что они делают.
+
+- Блок "Два цифровых сотрудника"  
+  Карточки Марии и Петра:
+  - задачи, каналы (телефония, мессенджеры, сайт);
+  - типы компаний, для которых они особенно полезны;
+  - стартовые тарифы.
+
+- Блок "Результаты для бизнеса"  
+  Пример кейса клиники:
+  - рост записей без найма новой смены;
+  - снижение потерь по лидам;
+  - выгрузка рутины из людей в систему.
+
+- Блок "Как мы внедряем"  
+  Четыре шага внедрения цифровых сотрудников:
+  1. Диагностика процессов
+  2. Проектирование ролей
+  3. Обучение и интеграция
+  4. Запуск и рост
+
+- Блок "Для кого" и тарифы  
+  Линейка входа:
+  - **Тариф 0 - шаблонный бот**  
+    Минимальный порог входа без сложного внедрения.
+  - **Мария - базовый администратор**
+  - **Пётр - базовый продавец**
+  - **Smart-отдел / Digital Dept**  
+    Несколько ролей, глубокая интеграция, цифровой отдел под ключ.
+
+- Футер  
+  Навигация, продукты, юридическая информация, упоминание офиса в Санкт-Петербурге.
+
+---
+
+## Технологический стек
+
+Проект реализован на современном фронтенд стеке:
+
+- **Next.js 16** (App Router, `app/` директория)
+- **React 18**
+- **TypeScript**
+- **Tailwind CSS v4**
+- Анимации на базе JS (например, Framer Motion или кастомные variants)
+- Интеграции:
+  - Яндекс.Метрика
+  - Google Search Console
+  - Яндекс.Webmaster
+
+Основной фокус - скорость загрузки, читаемость и адаптивность под разные устройства.
+
+---
+
+## Структура проекта
+
+Базовая структура репозитория:
+
+- `app/`  
+  Страницы и маршруты:
+  - `app/page.tsx` - главная страница.
+  - `app/products/` - страницы продуктов (Мария, Пётр, Digital Dept).
+  - `app/blog/` - список материалов и страницы статей.
+  - `app/company/` - раздел о компании.
+  - `app/layout.tsx` - общий layout, шапка, футер, метаданные, аналитика.
+
+- `ui/`  
+  Переиспользуемые UI компоненты:
+  - карточки продуктов и тарифов;
+  - секции лендинга;
+  - кнопки, формы, навигация, элементы "glass" интерфейса.
+
+- `lib/`  
+  Вспомогательная логика:
+  - анимации и variants;
+  - конфигурации секций;
+  - общие утилиты.
+
+- `styles/`  
+  Стили:
+  - `styles/globals.css` - глобальная типографика, reset и базовые слои для Tailwind.
+
+- `public/`  
+  Статические файлы:
+  - изображения, favicon, логотипы;
+  - `robots.txt`;
+  - `sitemap.xml`;
+  - файлы для верификации поисковых систем.
+
+Структура может уточняться по мере развития проекта, но принцип один:  
+страницы - в `app`, переиспользуемый интерфейс - в `ui`, утилиты - в `lib`.
+
+---
+
+## Быстрый старт для разработки
+
+### Требования
+
+- Node.js 20+
+- npm, pnpm или yarn
+
+### Установка зависимостей
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+npm install
+# или
+pnpm install
+# или
+yarn
