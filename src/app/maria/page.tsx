@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image"; // 👈 добавь вот это
 import { Button } from "@/ui/glass/Button";
 import { Section } from "@/ui/primitives/Section";
 import { ScrollReveal } from "@/ui/primitives/ScrollReveal";
@@ -70,14 +69,15 @@ export default function MariaPage() {
                   shadow-[0_26px_70px_rgba(15,23,42,0.16)]
                 "
               >
-                <Image
-                  src="/menegers/maria.png"
-                  alt="Мария — цифровой администратор"
-                  fill
-                  priority
-                  sizes="(min-width: 1024px) 360px, (min-width: 768px) 320px, 100vw"
-                  className="object-cover"
-                />
+              <video
+                    className="h-full w-full object-cover scale-[1]"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                  >
+                    <source src="/menegers/maria.mp4" type="video/mp4" />
+                  </video>
 
                 {/* Чип статуса */}
                 <div className="absolute left-4 bottom-4 inline-flex items-center gap-2 rounded-full px-3 py-1 text-[11px] bg-[rgba(255,255,255,0.96)] border border-[rgba(15,23,42,0.06)] text-[var(--text-secondary)]">
