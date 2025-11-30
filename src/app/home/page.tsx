@@ -329,7 +329,7 @@ export default function HomePage() {
           </ul>
           <div className="flex items-center justify-between pt-2">
             <p className="text-xs text-[var(--text-muted)]">
-              Тарифы: от 25 000 / мес
+              Тарифы: от 15 000 / мес
             </p>
             <Link href="/maria">
               <Button variant="ghost" className="px-4 py-2 text-xs">
@@ -379,7 +379,7 @@ export default function HomePage() {
           </ul>
           <div className="flex items-center justify-between pt-2">
             <p className="text-xs text-[var(--text-muted)]">
-              Тарифы: от 35 000 / мес
+              Тарифы: от 25 000 / мес
             </p>
             <Link href="/petr">
               <Button variant="ghost" className="px-4 py-2 text-xs">
@@ -689,7 +689,7 @@ export default function HomePage() {
           title: "Тариф 0 · Шаблонный бот",
           subtitle: "Минимальный вход без внедрения",
           text: "Простой сценарный бот, чтобы понять формат цифрового сотрудника и посмотреть на первые заявки.",
-          price: "от 10 000 / мес",
+          price: "от 7500 / мес",
         },
         {
           segment: "Операционка",
@@ -697,7 +697,7 @@ export default function HomePage() {
           title: "Мария · Базовый администратор",
           subtitle: "Голос + мессенджер",
           text: "Запись, переносы, напоминания и ответы на типовые вопросы во входящих каналах.",
-          price: "от 25 000 / мес",
+          price: "от 15 000 / мес",
         },
         {
           segment: "Продажи",
@@ -705,7 +705,7 @@ export default function HomePage() {
           title: "Пётр · Базовый продавец",
           subtitle: "AI-SDR для B2B и аутрича",
           text: "Исходящие звонки и сообщения, догрев лидов, первичная квалификация без тяжёлой интеграции.",
-          price: "от 35 000 / мес",
+          price: "от 25 000 / мес",
         },
         {
           segment: "Digital Dept",
