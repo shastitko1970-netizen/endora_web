@@ -240,8 +240,8 @@ export default function HomePage() {
 
       <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight text-[var(--text-primary)]">
         Цифровые сотрудники{" "}
-        <span className="text-[var(--gold-strong)]"></span>, которые
-        работают вместо команды людей. Эффективней людей.
+        <span className="text-[var(--gold-strong)]"></span>с сильным интеллектом.
+         Вашим клиентам понравится.
       </h1>
 
       <p className="text-base md:text-lg text-[var(--text-secondary)] max-w-xl">
