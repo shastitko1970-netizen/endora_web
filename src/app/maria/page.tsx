@@ -1,5 +1,6 @@
-"use client";
 
+
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Button } from "@/ui/glass/Button";
 import { Section } from "@/ui/primitives/Section";
@@ -9,6 +10,14 @@ import {
   fadeUpItem,
   fadeUpStaggerContainer,
 } from "@/lib/animations/homeVariants";
+
+// 👉 ВСТАВЛЯЕШЬ ЭТО В БЛОКЕ НИЖЕ
+export const metadata: Metadata = {
+  title: "Мария - цифровой администратор",
+  description:
+    "Мария - цифровой администратор, который берет на себя входящие звонки, сообщения и запись клиентов 24/7.",
+};
+// 👆 ДО СЮДА
 
 export default function MariaPage() {
   return (

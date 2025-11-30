@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://endora-ai.ru/sitemap.xml
+Host: endora-ai.ru

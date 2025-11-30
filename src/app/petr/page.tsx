@@ -1,6 +1,6 @@
 // src/app/petr/page.tsx
-"use client";
 
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Button } from "@/ui/glass/Button";
 import { Section } from "@/ui/primitives/Section";
@@ -10,6 +10,12 @@ import {
   fadeUpItem,
   fadeUpStaggerContainer,
 } from "@/lib/animations/homeVariants";
+
+export const metadata: Metadata = {
+  title: "Петр - цифровой менеджер по продажам",
+  description:
+    "Петр - цифровой менеджер по продажам, который звонит клиентам, делает фоллоу-апы и доводит сделки до оплаты.",
+};
 
 export default function PetrPage() {
   return (

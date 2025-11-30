@@ -1,6 +1,6 @@
 // src/app/products/page.tsx
-"use client";
 
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Button } from "@/ui/glass/Button";
 import { Section } from "@/ui/primitives/Section";
@@ -10,6 +10,13 @@ import {
   fadeUpItem,
   fadeUpStaggerContainer,
 } from "@/lib/animations/homeVariants";
+
+export const metadata: Metadata = {
+  title: "Продукты Endora AI",
+  description:
+    "Линейка продуктов Endora AI: цифровые сотрудники, голосовые и текстовые ассистенты, готовые решения для автоматизации бизнеса.",
+};
+
 
 export default function ProductsPage() {
   return (

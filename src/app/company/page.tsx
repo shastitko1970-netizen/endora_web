@@ -1,6 +1,6 @@
 // src/app/company/page.tsx
-"use client";
 
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Button } from "@/ui/glass/Button";
 import { Section } from "@/ui/primitives/Section";
@@ -10,6 +10,12 @@ import {
   fadeUpItem,
   fadeUpStaggerContainer,
 } from "@/lib/animations/homeVariants";
+
+export const metadata: Metadata = {
+  title: "О компании Endora AI",
+  description:
+    "Endora AI - команда, которая создает цифровых сотрудников для автоматизации сервисных процессов, продаж и клиентского сервиса.",
+};
 
 export default function CompanyPage() {
   return (
