@@ -84,6 +84,12 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           content="6d10b5196bb9a863"
         />
 
+         {/* Вторая верификация для Яндекс.Webmaster */}
+        <meta name="yandex-verification" 
+        content="6d10b5196bb9a863" 
+        />
+
+
         {/* Yandex.Metrika counter */}
         <script
           // eslint-disable-next-line react/no-danger
