@@ -88,26 +88,51 @@ export default function ProductsPage() {
     variants={fadeUpStaggerContainer}
     className="mt-10 grid gap-6 md:grid-cols-3 max-w-6xl mx-auto px-4"
   >
-    {/* Быстрый старт — шаблонные боты */}
+    {/* Шаблонные боты как сервис */}
     <ScrollReveal
       variants={fadeUpItem}
-      className="relative min-h-[340px] md:min-h-[360px] lg:min-h-[380px]"
+      className="group relative min-h-[340px] md:min-h-[360px] lg:min-h-[380px] [perspective:1200px]"
     >
-      <div className="flex h-full flex-col justify-between rounded-3xl bg-[var(--glass-bg)]/90 border border-[var(--glass-border)] backdrop-blur-[var(--glass-blur)] p-5 shadow-[0_20px_50px_rgba(15,23,42,0.14)] text-left">
-        <div className="space-y-3 text-sm">
-          <p className="text-[11px] uppercase tracking-[0.22em] text-[var(--text-muted)]">
-            Быстрый старт
-          </p>
-          <h3 className="text-base md:text-lg font-semibold text-[var(--text-primary)]">
-            Шаблонные боты как сервис
-          </h3>
-          <p className="text-[var(--text-secondary)]">
-            Готовые сценарные боты без внедрения. Подходят, чтобы безопасно
-            протестировать формат цифрового сотрудника и посмотреть первые заявки.
-          </p>
+      <div className="relative h-full w-full transition-transform duration-700 transform-gpu [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+        {/* Лицевая сторона */}
+        <div className="absolute inset-0 [backface-visibility:hidden] [transform:rotateY(0deg)]">
+          <div className="flex h-full flex-col justify-between rounded-3xl bg-[var(--glass-bg)]/90 border border-[var(--glass-border)] backdrop-blur-[var(--glass-blur)] p-5 shadow-[0_20px_50px_rgba(15,23,42,0.14)] text-left">
+            <div className="space-y-3 text-sm">
+              <p className="text-[11px] uppercase tracking-[0.22em] text-[var(--text-muted)]">
+                Быстрый старт
+              </p>
+              <h3 className="text-base md:text-lg font-semibold text-[var(--text-primary)]">
+                Шаблонные боты как сервис
+              </h3>
+              <p className="text-[var(--text-secondary)]">
+                Готовые сценарные боты без внедрения. Подходят, чтобы безопасно
+                протестировать формат цифрового сотрудника и посмотреть первые заявки.
+              </p>
+            </div>
+            <div className="pt-4 text-xs text-[var(--text-muted)]">
+              Наведите курсор, чтобы узнать, когда это лучший выбор.
+            </div>
+          </div>
         </div>
-        <div className="pt-4 text-xs text-[var(--text-muted)]">
-          Наведите курсор, чтобы узнать, когда это лучший выбор.
+
+        {/* Обратная сторона */}
+        <div className="absolute inset-0 [backface-visibility:hidden] [transform:rotateY(180deg)]">
+          <div className="flex h-full flex-col justify-between rounded-3xl bg-[var(--glass-bg)]/95 border border-[var(--glass-border)] backdrop-blur-[var(--glass-blur)] p-5 shadow-[0_24px_60px_rgba(15,23,42,0.16)] text-left">
+            <div className="space-y-3 text-[13px] leading-snug text-[var(--text-secondary)]">
+              <p className="text-[11px] uppercase tracking-[0.22em] text-[var(--text-muted)]">
+                Когда это лучший выбор
+              </p>
+              <ul className="space-y-1">
+                <li>· Вам нужно быстро протестировать формат цифрового сотрудника.</li>
+                <li>· Интеграция с CRM и телефонией пока не критична.</li>
+                <li>· Важно получить первые заявки и понять конверсию.</li>
+                <li>· Вы не хотите отвлекать IT-команду и усложнять инфраструктуру.</li>
+              </ul>
+            </div>
+            <p className="pt-3 text-[10px] text-[var(--text-muted)]">
+              В любой момент можно перейти на смарт-отдел или цифровой отдел без смены платформы.
+            </p>
+          </div>
         </div>
       </div>
     </ScrollReveal>
