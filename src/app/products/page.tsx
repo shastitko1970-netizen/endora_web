@@ -66,174 +66,157 @@ export default function ProductsPage() {
         </ScrollReveal>
       </Section>
 
-            {/* ЛИНЕЙКА РЕШЕНИЙ: flip-карточки по уровню сложности */}
-      <Section className="pb-16">
-        <ScrollReveal
-          variants={fadeUp}
-          className="max-w-5xl mx-auto px-4 space-y-4 text-center"
-        >
-          <p className="text-[11px] tracking-[0.24em] uppercase text-[var(--text-muted)]">
-            Линейка решений
+{/* Линейка решений: от простого бота до цифрового отдела */}
+<Section className="pt-20 pb-24">
+  {/* Заголовок секции */}
+  <ScrollReveal variants={fadeUp} className="max-w-3xl mx-auto text-center px-4">
+    <p className="text-[11px] uppercase tracking-[0.28em] text-[var(--text-muted)] mb-3">
+      Линейка решений
+    </p>
+    <h2 className="text-2xl md:text-[28px] font-semibold text-[var(--text-primary)] mb-4">
+      От простого бота до цифрового отдела
+    </h2>
+    <p className="text-sm md:text-[15px] text-[var(--text-secondary)] leading-relaxed">
+      Вся линейка строится вокруг двух осей: глубина интеграции и масштаб компании.
+      Можно начать с простого теста, а затем перейти к смарт-отделу и полноценному
+      цифровому отделу без смены платформы.
+    </p>
+  </ScrollReveal>
+
+  {/* Карточки линейки */}
+  <ScrollReveal
+    variants={fadeUpStaggerContainer}
+    className="mt-10 grid gap-6 md:grid-cols-3 max-w-6xl mx-auto px-4"
+  >
+    {/* Быстрый старт — шаблонные боты */}
+    <ScrollReveal
+      variants={fadeUpItem}
+      className="relative min-h-[340px] md:min-h-[360px] lg:min-h-[380px]"
+    >
+      <div className="flex h-full flex-col justify-between rounded-3xl bg-[var(--glass-bg)]/90 border border-[var(--glass-border)] backdrop-blur-[var(--glass-blur)] p-5 shadow-[0_20px_50px_rgba(15,23,42,0.14)] text-left">
+        <div className="space-y-3 text-sm">
+          <p className="text-[11px] uppercase tracking-[0.22em] text-[var(--text-muted)]">
+            Быстрый старт
           </p>
-          <h2 className="text-2xl md:text-3xl font-semibold text-[var(--text-primary)]">
-            От простого бота до цифрового отдела
-          </h2>
-          <p className="text-sm md:text-base text-[var(--text-secondary)] max-w-3xl mx-auto">
-            Вся линейка строится вокруг двух осей: глубина интеграции и масштаб
-            компании. Можно начать с простого теста, а затем перейти к
-            смарт-отделу и полноценному цифровому отделу без смены платформы.
+          <h3 className="text-base md:text-lg font-semibold text-[var(--text-primary)]">
+            Шаблонные боты как сервис
+          </h3>
+          <p className="text-[var(--text-secondary)]">
+            Готовые сценарные боты без внедрения. Подходят, чтобы безопасно
+            протестировать формат цифрового сотрудника и посмотреть первые заявки.
           </p>
-        </ScrollReveal>
+        </div>
+        <div className="pt-4 text-xs text-[var(--text-muted)]">
+          Наведите курсор, чтобы узнать, когда это лучший выбор.
+        </div>
+      </div>
+    </ScrollReveal>
 
-        <ScrollReveal
-          variants={fadeUpStaggerContainer}
-          className="mt-10 max-w-5xl mx-auto px-4 grid gap-6 md:grid-cols-3"
-        >
-          {/* Шаблонные боты */}
-          <ScrollReveal
-            variants={fadeUpItem}
-            className="group relative min-h-[340px] md:min-h-[360px] lg:min-h-[380px] [perspective:1200px]"
-          >
-            <div className="relative h-full w-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
-              {/* Лицевая сторона */}
-              <div className="absolute inset-0 flex flex-col justify-between rounded-3xl bg-[var(--glass-bg)]/85 border border-[var(--glass-border)] backdrop-blur-[var(--glass-blur)] p-5 shadow-[0_20px_50px_rgba(15,23,42,0.16)] [backface-visibility:hidden]">
-                <div className="space-y-3 text-sm text-left">
-                  <p className="text-[11px] uppercase tracking-[0.22em] text-[var(--text-muted)]">
-                    Быстрый старт
-                  </p>
-                  <h3 className="text-base md:text-lg font-semibold text-[var(--text-primary)]">
-                    Шаблонные боты как сервис
-                  </h3>
-                  <p className="text-[var(--text-secondary)]">
-                    Готовые сценарные боты без внедрения. Подходят, чтобы
-                    безопасно протестировать формат цифрового сотрудника и
-                    посмотреть первые заявки.
-                  </p>
-                </div>
-                <div className="pt-4 text-xs text-[var(--text-muted)]">
-                  Наведите курсор, чтобы узнать, когда это лучший выбор.
-                </div>
-              </div>
-
-              {/* Обратная сторона */}
-              <div className="absolute inset-0 flex flex-col justify-between rounded-3xl bg-[var(--glass-bg)]/97 border border-[var(--glass-border)] backdrop-blur-[var(--glass-blur)] p-5 shadow-[0_24px_60px_rgba(15,23,42,0.16)] [backface-visibility:hidden] [transform:rotateY(180deg)]">
-                <div className="space-y-3 text-[13px] leading-snug text-left text-[var(--text-secondary)]">
-                  <p className="text-[11px] uppercase tracking-[0.22em] text-[var(--text-muted)]">
-                    Когда выбирать
-                  </p>
-                  <ul className="space-y-1">
-                    <li>· Нужен простой бот без интеграций и сложных настроек.</li>
-                    <li>· Бюджет и время ограничены, хочется «пощупать формат».</li>
-                    <li>· Достаточно пары сценариев: запись, лид-форма, FAQ.</li>
-                    <li>· Важно быстро запустить что-то рабочее без долгих согласований.</li>
-                  </ul>
-                </div>
-                <p className="pt-3 text-[10px] text-[var(--text-muted)]">
-                  Можно начать с шаблонного бота и позже перейти к цифровому
-                  сотруднику без смены платформы.
-                </p>
-              </div>
+    {/* Смарт-отдел */}
+    <ScrollReveal
+      variants={fadeUpItem}
+      className="group relative min-h-[340px] md:min-h-[360px] lg:min-h-[380px] [perspective:1200px]"
+    >
+      <div className="relative h-full w-full transition-transform duration-700 transform-gpu [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+        {/* Лицевая сторона */}
+        <div className="absolute inset-0 [backface-visibility:hidden] [transform:rotateY(0deg)]">
+          <div className="flex h-full flex-col justify-between rounded-3xl bg-[var(--glass-bg)]/90 border border-[var(--glass-border)] backdrop-blur-[var(--glass-blur)] p-5 shadow-[0_20px_50px_rgba(15,23,42,0.16)] text-left">
+            <div className="space-y-3 text-sm">
+              <p className="text-[11px] uppercase tracking-[0.22em] text-[var(--text-muted)]">
+                Для растущего бизнеса
+              </p>
+              <h3 className="text-base md:text-lg font-semibold text-[var(--text-primary)]">
+                Смарт-отдел на цифровых сотрудниках
+              </h3>
+              <p className="text-[var(--text-secondary)]">
+                Комбинация нескольких цифровых сотрудников: отдельные роли
+                под входящие обращения, продажи, follow-up и работу с базой.
+                Всё работает поверх вашей телефонии и CRM.
+              </p>
             </div>
-          </ScrollReveal>
-
-          {/* Смарт-отдел */}
-          <ScrollReveal
-            variants={fadeUpItem}
-            className="group relative min-h-[340px] md:min-h-[360px] lg:min-h-[380px] [perspective:1200px]"
-          >
-            <div className="relative h-full w-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
-              {/* Лицевая сторона */}
-              <div className="absolute inset-0 flex flex-col justify-between rounded-3xl bg-[var(--glass-bg)]/90 border border-[var(--glass-border)] backdrop-blur-[var(--glass-blur)] p-5 shadow-[0_20px_50px_rgba(15,23,42,0.16)] [backface-visibility:hidden]">
-                <div className="space-y-3 text-sm text-left">
-                  <p className="text-[11px] uppercase tracking-[0.22em] text-[var(--text-muted)]">
-                    Для растущего бизнеса
-                  </p>
-                  <h3 className="text-base md:text-lg font-semibold text-[var(--text-primary)]">
-                    Смарт-отдел на цифровых сотрудниках
-                  </h3>
-                  <p className="text-[var(--text-secondary)]">
-                    Комбинация нескольких цифровых сотрудников: отдельные роли
-                    под входящие обращения, продажи, follow-up и работу с
-                    базой. Всё работает поверх вашей телефонии и CRM.
-                  </p>
-                </div>
-                <div className="pt-4 text-xs text-[var(--text-muted)]">
-                  Наведите курсор, чтобы увидеть, как выглядит такой отдел.
-                </div>
-              </div>
-
-              {/* Обратная сторона */}
-              <div className="absolute inset-0 flex flex-col justify-between rounded-3xl bg-[var(--glass-bg)]/97 border border-[var(--glass-border)] backdrop-blur-[var(--glass-blur)] p-5 shadow-[0_24px_60px_rgba(15,23,42,0.16)] [backface-visibility:hidden] [transform:rotateY(180deg)]">
-                <div className="space-y-3 text-[13px] leading-snug text-left text-[var(--text-secondary)]">
-                  <p className="text-[11px] uppercase tracking-[0.22em] text-[var(--text-muted)]">
-                    Как это устроено
-                  </p>
-                  <ul className="space-y-1">
-                    <li>· Цифровой сотрудник для входящих звонков и чатов.</li>
-                    <li>· Цифровой сотрудник для исходящих писем и аутрича.</li>
-                    <li>· Интеграция с CRM: статусы, задачи, комментарии.</li>
-                    <li>· Общая воронка: от первого контакта до встречи.</li>
-                    <li>· Единая отчётность по звонкам, заявкам и конверсии.</li>
-                  </ul>
-                </div>
-                <p className="pt-3 text-[10px] text-[var(--text-muted)]">
-                  Формат для компаний, где ручной операционки уже слишком много
-                  для одной команды.
-                </p>
-              </div>
+            <div className="pt-4 text-xs text-[var(--text-muted)]">
+              Наведите курсор, чтобы увидеть, как выглядит такой отдел.
             </div>
-          </ScrollReveal>
+          </div>
+        </div>
 
-          {/* Цифровой отдел End-to-End */}
-          <ScrollReveal
-            variants={fadeUpItem}
-            className="group relative min-h-[340px] md:min-h-[360px] lg:min-h-[380px] [perspective:1200px]"
-          >
-            <div className="relative h-full w-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
-              {/* Лицевая сторона */}
-              <div className="absolute inset-0 flex flex-col justify-between rounded-3xl bg-[var(--glass-bg)]/95 border border-[var(--glass-border)] backdrop-blur-[var(--glass-blur)] p-5 shadow-[0_20px_50px_rgba(15,23,42,0.18)] [backface-visibility:hidden]">
-                <div className="space-y-3 text-sm text-left">
-                  <p className="text-[11px] uppercase tracking-[0.22em] text-[var(--text-muted)]">
-                    Enterprise-уровень
-                  </p>
-                  <h3 className="text-base md:text-lg font-semibold text-[var(--text-primary)]">
-                    Цифровой отдел End-to-End
-                  </h3>
-                  <p className="text-[var(--text-secondary)]">
-                    Несколько цифровых сотрудников под разные роли, полная
-                    карта процессов и глубокая интеграция: от первого контакта
-                    до договора и отчётности в BI.
-                  </p>
-                </div>
-                <div className="pt-4 text-xs text-[var(--text-muted)]">
-                  Наведите курсор, чтобы увидеть, какие сущности здесь
-                  связываются.
-                </div>
-              </div>
-
-              {/* Обратная сторона */}
-              <div className="absolute inset-0 flex flex-col justify-between rounded-3xl bg-[var(--glass-bg)]/97 border border-[var(--glass-border)] backdrop-blur-[var(--glass-blur)] p-5 shadow-[0_24px_60px_rgba(15,23,42,0.16)] [backface-visibility:hidden] [transform:rotateY(180deg)]">
-                <div className="space-y-3 text-[13px] leading-snug text-left text-[var(--text-secondary)]">
-                  <p className="text-[11px] uppercase tracking-[0.22em] text-[var(--text-muted)]">
-                    Что внутри
-                  </p>
-                  <ul className="space-y-1">
-                    <li>· Роли под входящие, продажи, поддержку и операции.</li>
-                    <li>· Интеграция: телефония, CRM, почта, мессенджеры, BI.</li>
-                    <li>· Обучение на скриптах, переписке и записях звонков.</li>
-                    <li>· Индивидуальные дашборды по KPI для руководителей.</li>
-                    <li>· Сопровождение и развитие после запуска.</li>
-                  </ul>
-                </div>
-                <p className="pt-3 text-[10px] text-[var(--text-muted)]">
-                  Формат для компаний, где AI-система становится частью
-                  инфраструктуры, а не отдельным экспериментом.
-                </p>
-              </div>
+        {/* Обратная сторона */}
+        <div className="absolute inset-0 [backface-visibility:hidden] [transform:rotateY(180deg)]">
+          <div className="flex h-full flex-col justify-between rounded-3xl bg-[var(--glass-bg)]/97 border border-[var(--glass-border)] backdrop-blur-[var(--glass-blur)] p-5 shadow-[0_24px_60px_rgba(15,23,42,0.16)] text-left">
+            <div className="space-y-3 text-[13px] leading-snug text-[var(--text-secondary)]">
+              <p className="text-[11px] uppercase tracking-[0.22em] text-[var(--text-muted)]">
+                Как это устроено
+              </p>
+              <ul className="space-y-1">
+                <li>· Цифровой сотрудник для входящих звонков и чатов.</li>
+                <li>· Цифровой сотрудник для исходящих писем и аутрича.</li>
+                <li>· Интеграция с CRM: статусы, задачи, комментарии.</li>
+                <li>· Общая воронка: от первого контакта до встречи.</li>
+                <li>· Единая отчётность по звонкам, заявкам и конверсии.</li>
+              </ul>
             </div>
-          </ScrollReveal>
-        </ScrollReveal>
-      </Section>
+            <p className="pt-3 text-[10px] text-[var(--text-muted)]">
+              Формат для компаний, где ручной операционки уже слишком много
+              для одной команды.
+            </p>
+          </div>
+        </div>
+      </div>
+    </ScrollReveal>
+
+    {/* Цифровой отдел End-to-End */}
+    <ScrollReveal
+      variants={fadeUpItem}
+      className="group relative min-h-[340px] md:min-h-[360px] lg:min-h-[380px] [perspective:1200px]"
+    >
+      <div className="relative h-full w-full transition-transform duration-700 transform-gpu [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+        {/* Лицевая сторона */}
+        <div className="absolute inset-0 [backface-visibility:hidden] [transform:rotateY(0deg)]">
+          <div className="flex h-full flex-col justify-between rounded-3xl bg-[var(--glass-bg)]/95 border border-[var(--glass-border)] backdrop-blur-[var(--glass-blur)] p-5 shadow-[0_20px_50px_rgba(15,23,42,0.18)] text-left">
+            <div className="space-y-3 text-sm">
+              <p className="text-[11px] uppercase tracking-[0.22em] text-[var(--text-muted)]">
+                Enterprise-уровень
+              </p>
+              <h3 className="text-base md:text-lg font-semibold text-[var(--text-primary)]">
+                Цифровой отдел End-to-End
+              </h3>
+              <p className="text-[var(--text-secondary)]">
+                Несколько цифровых сотрудников под разные роли, полная карта
+                процессов и глубокая интеграция: от первого контакта до
+                договора и отчётности в BI.
+              </p>
+            </div>
+            <div className="pt-4 text-xs text-[var(--text-muted)]">
+              Наведите курсор, чтобы увидеть, какие сущности здесь связываются.
+            </div>
+          </div>
+        </div>
+
+        {/* Обратная сторона */}
+        <div className="absolute inset-0 [backface-visibility:hidden] [transform:rotateY(180deg)]">
+          <div className="flex h-full flex-col justify-between rounded-3xl bg-[var(--glass-bg)]/97 border border-[var(--glass-border)] backdrop-blur-[var(--glass-blur)] p-5 shadow-[0_24px_60px_rgba(15,23,42,0.16)] text-left">
+            <div className="space-y-3 text-[13px] leading-snug text-[var(--text-secondary)]">
+              <p className="text-[11px] uppercase tracking-[0.22em] text-[var(--text-muted)]">
+                Что внутри
+              </p>
+              <ul className="space-y-1">
+                <li>· Роли под входящие, продажи, поддержку и операции.</li>
+                <li>· Интеграция: телефония, CRM, почта, мессенджеры, BI.</li>
+                <li>· Обучение на скриптах, переписке и записях звонков.</li>
+                <li>· Индивидуальные дашборды по KPI для руководителей.</li>
+                <li>· Сопровождение и развитие после запуска.</li>
+              </ul>
+            </div>
+            <p className="pt-3 text-[10px] text-[var(--text-muted)]">
+              Формат для компаний, где AI-система становится частью
+              инфраструктуры, а не отдельным экспериментом.
+            </p>
+          </div>
+        </div>
+      </div>
+    </ScrollReveal>
+  </ScrollReveal>
+</Section>
 
 
 
