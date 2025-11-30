@@ -677,3 +677,23 @@
   border-width: 7px 0 7px 11px;
   border-color: transparent transparent transparent #241b0d;
 }
+
+
+/* Аккуратный тонкий скролл для модалки статьи */
+.blog-article-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(15, 23, 42, 0.28) transparent;
+}
+
+.blog-article-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.blog-article-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.blog-article-scroll::-webkit-scrollbar-thumb {
+  background: rgba(15, 23, 42, 0.28);
+  border-radius: 999px;
+}
