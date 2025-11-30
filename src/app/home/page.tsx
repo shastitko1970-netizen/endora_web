@@ -294,14 +294,15 @@ export default function HomePage() {
       <article className="h-full rounded-[32px] bg-[var(--glass-bg)]/80 border border-[var(--glass-border)] backdrop-blur-[var(--glass-blur)] shadow-[0_26px_60px_rgba(15,23,42,0.08)] p-5 md:p-6 flex flex-col gap-5">
         {/* Превью Марии */}
         <div className="relative w-full aspect-[3/4] overflow-hidden rounded-3xl bg-[var(--sand-soft)]/80 border border-[var(--glass-border)]">
-          <Image
-            src="/menegers/maria.png"
-            alt="Мария — цифровой администратор Endora AI"
-            fill
-            className="object-cover"
-            sizes="(min-width: 768px) 50vw, 100vw"
-            priority
-          />
+          <video
+                    className="h-full w-full object-cover scale-[1]"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                  >
+                    <source src="/menegers/maria.mp4" type="video/mp4" />
+                  </video>
 
           <div className="absolute left-4 bottom-4 inline-flex items-center gap-2 rounded-full px-3 py-1 text-[11px] bg-[var(--glass-bg)]/80 border border-[var(--glass-border)] text-[var(--text-secondary)]">
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
@@ -345,13 +346,15 @@ export default function HomePage() {
       <article className="h-full rounded-[32px] bg-[var(--glass-bg)]/80 border border-[var(--glass-border)] backdrop-blur-[var(--glass-blur)] shadow-[0_26px_60px_rgba(15,23,42,0.08)] p-5 md:p-6 flex flex-col gap-5">
         {/* Превью Петра */}
         <div className="relative w-full aspect-[3/4] overflow-hidden rounded-3xl bg-[var(--sand-soft)]/80 border border-[var(--glass-border)]">
-          <Image
-            src="/menegers/piter.png"
-            alt="Пётр — цифровой продавец Endora AI"
-            fill
-            className="object-cover"
-            sizes="(min-width: 768px) 50vw, 100vw"
-          />
+         <video
+                    className="h-full w-full object-cover scale-[1]"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                  >
+                    <source src="/menegers/peter.mp4" type="video/mp4" />
+                  </video>
 
           <div className="absolute left-4 bottom-4 inline-flex items-center gap-2 rounded-full px-3 py-1 text-[11px] bg-[var(--glass-bg)]/80 border border-[var(--glass-border)] text-[var(--text-secondary)]">
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
