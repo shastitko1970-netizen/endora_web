@@ -200,7 +200,7 @@ const ARTICLES = {
           {/* Две финальные карточки как в Notion */}
           <div className="grid gap-4 md:grid-cols-2">
             <div className="rounded-2xl bg-[#FFF7E0] border border-[rgba(15,23,42,0.06)] px-4 py-4 text-sm leading-relaxed">
-              <p className="text-lg mb-1">👀</p>
+        
               <p className="font-semibold">
                 Если вы только присматриваетесь к цифровым сотрудникам
               </p>
@@ -211,7 +211,7 @@ const ARTICLES = {
               </p>
             </div>
             <div className="rounded-2xl bg-[#FFE9E0] border border-[rgba(15,23,42,0.06)] px-4 py-4 text-sm leading-relaxed">
-              <p className="text-lg mb-1">🎯</p>
+             
               <p className="font-semibold">
                 Если у вас уже есть процессы и понятна точка боли
               </p>
