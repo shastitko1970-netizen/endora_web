@@ -1,4 +1,4 @@
-// src/app/start/page.tsx
+// src/app/blog/page.tsx
 
 import type { Metadata } from "next";
 import BlogClientPage from "./BlogClientPage";

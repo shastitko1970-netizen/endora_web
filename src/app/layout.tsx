@@ -51,6 +51,21 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://endora-ai.ru",
   },
+
+  // 👇 фавиконки для Яндекса и Google
+  icons: {
+    icon: [
+      {
+        url: "/favicon.ico",
+        sizes: "any",
+        type: "image/x-icon",
+      },
+      {
+        url: "/favicon.svg",
+        type: "image/svg+xml",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
@@ -73,9 +88,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html lang="ru">
       <head>
         {/* Верификация для Яндекс почты */}
-        <meta name="yandex-verification" 
-        content="6d10b5196bb9a863" />
-        
+        <meta name="yandex-verification" content="6d10b5196bb9a863" />
+
         {/* Верификация для Google Search Console */}
         <meta
           name="google-site-verification"
@@ -83,16 +97,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         />
 
         {/* Верификация для Яндекс.Webmaster */}
-        <meta
-          name="yandex-verification"
-          content="6d10b5196bb9a863"
-        />
+        <meta name="yandex-verification" content="6d10b5196bb9a863" />
 
-         {/* Вторая верификация для Яндекс.Webmaster */}
-        <meta name="yandex-verification" 
-        content="6d10b5196bb9a863" 
-        />
-
+        {/* Вторая верификация для Яндекс.Webmaster */}
+        <meta name="yandex-verification" content="6d10b5196bb9a863" />
 
         {/* Yandex.Metrika counter */}
         <script
