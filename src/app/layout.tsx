@@ -72,6 +72,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="ru">
       <head>
+        {/* Верификация для Яндекс почты */}
+        <meta name="yandex-verification" 
+        content="6d10b5196bb9a863" />
+        
         {/* Верификация для Google Search Console */}
         <meta
           name="google-site-verification"
