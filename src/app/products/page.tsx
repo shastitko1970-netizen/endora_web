@@ -14,6 +14,20 @@ import {
 } from "@/lib/animations/homeVariants";
 import { useState, useEffect } from "react";
 
+
+export const metadata: Metadata = {
+  title: "Endora Core — Платформа цифровых сотрудников | Модули и возможности",
+  description: "Endora Core — мозг и шина данных компании. Подключение систем, аналитика, мониторинг, коммуникации. 6 модулей для создания цифровых сотрудников под любые задачи бизнеса.",
+  keywords: "endora core, цифровые сотрудники, AI платформа, бизнес аналитика, автоматизация процессов, интеграция систем",
+  openGraph: {
+    title: "Endora Core — Платформа цифровых сотрудников",
+    description: "Мозг и шина данных компании. 6 модулей для создания AI-сотрудников под ваши задачи.",
+    type: "website",
+    locale: "ru_RU",
+  },
+};
+
+
 export default function EndoraCoreПродуктыPage() {
   // Анимированные счетчики для статистики
   const [integrations, setIntegrations] = useState(0);
@@ -57,46 +71,47 @@ export default function EndoraCoreПродуктыPage() {
             и в каком состоянии.
           </p>
 
-          {/* Анимированная статистика */}
-          <ScrollReveal variants={fadeUp} className="mt-8">
-            <div className="flex flex-wrap justify-center gap-8 md:gap-16">
-              <motion.div 
-                className="text-center"
-                initial={{ scale: 0.8, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-              >
-                <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-500 to-indigo-600 bg-clip-text text-transparent">
-                  {integrations}+
-                </div>
-                <p className="text-xs md:text-sm text-[var(--text-muted)] mt-1">типов интеграций</p>
-              </motion.div>
+         {/* Анимированная статистика */}
+              <ScrollReveal variants={fadeUp} className="mt-8">
+                <div className="flex flex-wrap justify-center gap-8 md:gap-16">
+                  <motion.div 
+                    className="text-center"
+                    initial={{ scale: 0.8, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 1 }}
+                    transition={{ duration: 0.6, delay: 0.2 }}
+                  >
+                    <div className="text-4xl md:text-5xl font-bold text-[var(--text-primary)]">
+                      {integrations}+
+                    </div>
+                    <p className="text-xs md:text-sm text-[var(--text-muted)] mt-1">типов интеграций</p>
+                  </motion.div>
 
-              <motion.div 
-                className="text-center"
-                initial={{ scale: 0.8, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-              >
-                <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-emerald-500 to-teal-600 bg-clip-text text-transparent">
-                  {events.toLocaleString()}+
-                </div>
-                <p className="text-xs md:text-sm text-[var(--text-muted)] mt-1">событий в секунду</p>
-              </motion.div>
+                  <motion.div 
+                    className="text-center"
+                    initial={{ scale: 0.8, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 1 }}
+                    transition={{ duration: 0.6, delay: 0.4 }}
+                  >
+                    <div className="text-4xl md:text-5xl font-bold text-[var(--text-primary)]">
+                      {events.toLocaleString()}+
+                    </div>
+                    <p className="text-xs md:text-sm text-[var(--text-muted)] mt-1">событий в секунду</p>
+                  </motion.div>
 
-              <motion.div 
-                className="text-center"
-                initial={{ scale: 0.8, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                transition={{ duration: 0.6, delay: 0.6 }}
-              >
-                <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-violet-500 to-purple-600 bg-clip-text text-transparent">
-                  24/7
+                  <motion.div 
+                    className="text-center"
+                    initial={{ scale: 0.8, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 1 }}
+                    transition={{ duration: 0.6, delay: 0.6 }}
+                  >
+                    <div className="text-4xl md:text-5xl font-bold text-[var(--text-primary)]">
+                      24/7
+                    </div>
+                    <p className="text-xs md:text-sm text-[var(--text-muted)] mt-1">мониторинг и аудит</p>
+                  </motion.div>
                 </div>
-                <p className="text-xs md:text-sm text-[var(--text-muted)] mt-1">мониторинг и аудит</p>
-              </motion.div>
-            </div>
-          </ScrollReveal>
+              </ScrollReveal>
+
 
           {/* Видео блок */}
           <ScrollReveal variants={fadeUp} className="mt-12">
