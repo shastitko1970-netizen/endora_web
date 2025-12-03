@@ -393,12 +393,12 @@ export default function HomePage() {
   </div>
 </Section>
 
-      {/* ПАВЕЛ — ЦИФРОВОЙ РОП (горизонтальный формат, не как Мария/Пётр) */}
+            {/* ПАВЕЛ — ЦИФРОВОЙ РОП (горизонтальный формат, не как Мария/Пётр) */}
       <Section className="py-20 border-t border-[rgba(15,23,42,0.04)]">
         <div className="max-w-7xl mx-auto px-4">
           <ScrollReveal variants={fadeUp} className="text-center space-y-4 mb-12">
-            <p className="text-[11px] tracking-[0.24em] uppercase text-orange-500/80">
-              Новый цифровой сотрудник
+            <p className="text-[11px] tracking-[0.24em] uppercase text-[var(--text-muted)]">
+              NEW DIGITAL EMPLOYEE
             </p>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-[var(--text-primary)] max-w-4xl mx-auto">
               Павел — цифровой РОП, который видит воронку целиком
@@ -410,34 +410,55 @@ export default function HomePage() {
           </ScrollReveal>
 
           <ScrollReveal variants={fadeUp}>
-            <div className="relative overflow-hidden rounded-[40px] border border-orange-200/40 bg-gradient-to-br from-amber-50/40 via-orange-50/30 to-yellow-50/40 shadow-[0_30px_80px_rgba(251,146,60,0.18)]">
-              <div className="grid lg:grid-cols-[1.4fr_1fr] gap-0">
+            <motion.div
+              className="relative overflow-hidden rounded-[40px] border border-orange-200/40 bg-gradient-to-br from-amber-50/40 via-orange-50/30 to-yellow-50/40 shadow-[0_30px_80px_rgba(251,146,60,0.18)]"
+              whileHover={{ boxShadow: "0 40px 100px rgba(251,146,60,0.25)" }}
+              transition={{ duration: 0.3 }}
+            >
+              <div className="grid lg:grid-cols-[1.5fr_1fr] gap-0">
                 {/* Левая часть — крупное видео Павла */}
-                <div className="relative aspect-[4/3] lg:aspect-auto lg:min-h-[520px] overflow-hidden">
-                  <video
+                <div className="relative aspect-[4/3] lg:aspect-auto lg:min-h-[600px] overflow-hidden group">
+                  <motion.video
                     className="absolute inset-0 h-full w-full object-cover"
                     autoPlay
                     muted
                     loop
                     playsInline
+                    initial={{ scale: 1.05, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 1 }}
+                    transition={{ duration: 0.8, ease: "easeOut" }}
                   >
                     <source src="/menegers/pavel.mp4" type="video/mp4" />
-                  </video>
+                  </motion.video>
 
                   {/* Оверлей с градиентом для читаемости статуса */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
 
-                  {/* Статус внизу слева */}
-                  <div className="absolute left-6 bottom-6 inline-flex items-center gap-2.5 rounded-full px-4 py-2 text-sm bg-gradient-to-r from-orange-500 to-amber-500 text-white border border-orange-400/30 shadow-2xl backdrop-blur-sm">
-                    <span className="w-2 h-2 rounded-full bg-white animate-pulse" />
+                  {/* Статус внизу слева с анимацией */}
+                  <motion.div
+                    className="absolute left-6 bottom-6 inline-flex items-center gap-2.5 rounded-full px-4 py-2 text-sm bg-gradient-to-r from-orange-500 to-amber-500 text-white border border-orange-400/30 shadow-2xl backdrop-blur-sm"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.4, duration: 0.6 }}
+                  >
+                    <motion.span
+                      className="w-2 h-2 rounded-full bg-white"
+                      animate={{ scale: [1, 1.2, 1] }}
+                      transition={{ repeat: Infinity, duration: 2 }}
+                    />
                     <span className="font-medium">Павел следит за воронкой</span>
-                  </div>
+                  </motion.div>
                 </div>
 
                 {/* Правая часть — компактная панель с тезисами */}
                 <div className="flex flex-col justify-between p-8 md:p-10 lg:p-12">
                   <div className="space-y-6">
-                    <div>
+                    <motion.div
+                      initial={{ opacity: 0, x: 20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.5 }}
+                    >
                       <p className="text-xs uppercase tracking-[0.24em] text-orange-500/90 mb-2">
                         Павел · цифровой РОП
                       </p>
@@ -448,50 +469,61 @@ export default function HomePage() {
                         Для компаний, где уже есть отдел продаж и CRM, но у РОПа нет
                         честной картины: что происходит с воронкой и где застревают сделки.
                       </p>
-                    </div>
+                    </motion.div>
 
-                    {/* Мини-метрики в стиле дашборда */}
+                    {/* Мини-метрики в стиле дашборда с анимацией */}
                     <div className="space-y-3 pt-2">
-                      <div className="flex items-start gap-3 p-3 rounded-xl bg-white/60 border border-orange-200/40">
-                        <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-gradient-to-br from-orange-400 to-amber-500 flex items-center justify-center text-white text-sm font-bold">
-                          1
-                        </div>
-                        <div className="text-xs text-[var(--text-secondary)]">
-                          <span className="font-medium text-[var(--text-primary)]">
-                            Следит за воронкой
-                          </span>{" "}
-                          по всем менеджерам и каналам
-                        </div>
-                      </div>
-
-                      <div className="flex items-start gap-3 p-3 rounded-xl bg-white/60 border border-orange-200/40">
-                        <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-gradient-to-br from-orange-400 to-amber-500 flex items-center justify-center text-white text-sm font-bold">
-                          2
-                        </div>
-                        <div className="text-xs text-[var(--text-secondary)]">
-                          <span className="font-medium text-[var(--text-primary)]">
-                            Подсвечивает сделки
-                          </span>{" "}
-                          и клиентов в зоне риска
-                        </div>
-                      </div>
-
-                      <div className="flex items-start gap-3 p-3 rounded-xl bg-white/60 border border-orange-200/40">
-                        <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-gradient-to-br from-orange-400 to-amber-500 flex items-center justify-center text-white text-sm font-bold">
-                          3
-                        </div>
-                        <div className="text-xs text-[var(--text-secondary)]">
-                          <span className="font-medium text-[var(--text-primary)]">
-                            Формирует дайджесты
-                          </span>{" "}
-                          для собственника и РОПа каждый день
-                        </div>
-                      </div>
+                      {[
+                        {
+                          num: "1",
+                          title: "Следит за воронкой",
+                          desc: "по всем менеджерам и каналам",
+                          delay: 0.1,
+                        },
+                        {
+                          num: "2",
+                          title: "Подсвечивает сделки",
+                          desc: "и клиентов в зоне риска",
+                          delay: 0.2,
+                        },
+                        {
+                          num: "3",
+                          title: "Формирует дайджесты",
+                          desc: "для собственника и РОПа каждый день",
+                          delay: 0.3,
+                        },
+                      ].map((item) => (
+                        <motion.div
+                          key={item.num}
+                          className="flex items-start gap-3 p-3 rounded-xl bg-white/60 border border-orange-200/40 hover:bg-white/80 hover:border-orange-300/60 transition-all duration-300 cursor-default"
+                          initial={{ opacity: 0, x: 20 }}
+                          whileInView={{ opacity: 1, x: 0 }}
+                          viewport={{ once: true }}
+                          transition={{ delay: item.delay, duration: 0.5 }}
+                          whileHover={{ x: 4 }}
+                        >
+                          <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-gradient-to-br from-orange-400 to-amber-500 flex items-center justify-center text-white text-sm font-bold shadow-lg">
+                            {item.num}
+                          </div>
+                          <div className="text-xs text-[var(--text-secondary)]">
+                            <span className="font-medium text-[var(--text-primary)]">
+                              {item.title}
+                            </span>{" "}
+                            {item.desc}
+                          </div>
+                        </motion.div>
+                      ))}
                     </div>
                   </div>
 
                   {/* CTA и подсказка */}
-                  <div className="space-y-3 pt-6 border-t border-orange-200/40 mt-6">
+                  <motion.div
+                    className="space-y-3 pt-6 border-t border-orange-200/40 mt-6"
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.4, duration: 0.5 }}
+                  >
                     <Link href="/pavel">
                       <Button className="w-full md:w-auto px-8 py-3 text-sm">
                         Узнать про Павла
@@ -501,13 +533,14 @@ export default function HomePage() {
                       Подходит, если у вас 3+ менеджеров в отделе продаж, есть CRM,
                       но нет ощущения контроля над воронкой и выручкой.
                     </p>
-                  </div>
+                  </motion.div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </ScrollReveal>
         </div>
       </Section>
+
 
 
 
