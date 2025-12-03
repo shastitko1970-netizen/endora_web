@@ -481,23 +481,24 @@ export default function HomePage() {
             </div>
 
             <div className="relative mt-1">
-              <div className="relative w-full aspect-[16/9] overflow-hidden">
-                <video
-                  className="h-full w-full object-cover"
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                >
-                  <source src="/menegers/pavel.mp4" type="video/mp4" />
-                </video>
+                <div className="relative w-full aspect-[9/16] overflow-hidden rounded-b-3xl">
+                  <video
+                    className="h-full w-full object-cover"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                  >
+                    <source src="/menegers/pavel.mp4" type="video/mp4" />
+                  </video>
 
-                <div className="absolute left-4 bottom-3 inline-flex items-center gap-2 rounded-full px-3 py-1 text-[11px] bg-gradient-to-r from-orange-500 to-amber-500 text-white border border-orange-400/30 shadow-lg">
-                  <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
-                  Павел следит за воронкой
+                  <div className="absolute left-4 bottom-4 inline-flex items-center gap-2 rounded-full px-3 py-1 text-[11px] bg-gradient-to-r from-orange-500 to-amber-500 text-white border border-orange-400/30 shadow-lg">
+                    <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
+                    Павел следит за воронкой
+                  </div>
                 </div>
               </div>
-            </div>
+
           </ScrollReveal>
         </ScrollReveal>
       </Section>
