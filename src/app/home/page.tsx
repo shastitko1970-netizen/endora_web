@@ -393,6 +393,116 @@ export default function HomePage() {
   </div>
 </Section>
 
+      {/* ПАВЕЛ — ЦИФРОВОЙ РОП (новый блок после Марии и Петра) */}
+      <Section className="py-16 border-t border-[rgba(15,23,42,0.04)]">
+        <ScrollReveal
+          variants={fadeUp}
+          className="max-w-5xl mx-auto px-4 space-y-4 text-center md:text-left"
+        >
+          <p className="text-[11px] tracking-[0.24em] uppercase text-[var(--text-muted)]">
+            Новый цифровой сотрудник
+          </p>
+          <h2 className="text-2xl md:text-3xl font-semibold text-[var(--text-primary)]">
+            Павел — цифровой РОП, который видит воронку целиком и помогает
+            зарабатывать больше на тех лидах, что уже есть
+          </h2>
+          <p className="text-sm md:text-base text-[var(--text-secondary)] max-w-3xl">
+            Если Мария и Пётр закрывают «первую линию» — берут звонки, отвечают
+            в мессенджерах и дожимают лиды до встречи, то Павел смотрит на
+            отдел продаж сверху. Он видит, где теряются деньги, какие менеджеры
+            проседают, и подсказывает, куда давить, чтобы росла выручка.
+          </p>
+        </ScrollReveal>
+
+        <ScrollReveal
+          variants={fadeUpStaggerContainer}
+          className="mt-8 max-w-5xl mx-auto px-4 grid gap-6 md:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)] items-stretch"
+        >
+          {/* Левая часть — объяснение, кому и зачем нужен Павел */}
+          <ScrollReveal
+            variants={fadeUpItem}
+            className="rounded-3xl bg-[var(--glass-bg)]/85 border border-[var(--glass-border)] backdrop-blur-[var(--glass-blur)] p-6 md:p-7 shadow-[0_20px_60px_rgba(15,23,42,0.15)] flex flex-col justify-between gap-4"
+          >
+            <div className="space-y-3 text-sm text-[var(--text-secondary)]">
+              <p className="text-[12px] font-medium text-[var(--text-primary)]">
+                Для кого нужен Павел
+              </p>
+              <p>
+                Для компаний, где уже есть отдел продаж, CRM и поток заявок, но
+                у собственника и РОПа нет простой и честной картины: что
+                происходит с воронкой, где застревают сделки и кто из менеджеров
+                тянет вниз результат.
+              </p>
+              <p>
+                Павел подключается к вашим системам, собирает данные в единую
+                модель и каждый день отвечает на три вопроса: выполняем ли мы
+                план, где сейчас узкие места и какие конкретные действия дадут
+                максимум эффекта в ближайшие недели.
+              </p>
+              <p className="text-[12px] text-[var(--text-muted)]">
+                Его задача — не заменить РОПа, а снять с него рутину по сбору и
+                разбору цифр, чтобы руководитель занимался людьми и стратегией,
+                а не отчётами.
+              </p>
+            </div>
+
+            <div className="flex flex-wrap items-center gap-3 pt-1">
+              <Link href="/pavel">
+                <Button className="px-6 py-2.5 text-xs md:text-sm">
+                  Узнать про Павла
+                </Button>
+              </Link>
+              <span className="text-[11px] text-[var(--text-muted)] max-w-xs">
+                Подходит, если у вас 3+ менеджеров в отделе продаж, есть CRM, но
+                нет ощущения контроля над воронкой и выручкой.
+              </span>
+            </div>
+          </ScrollReveal>
+
+          {/* Правая часть — мини-карточка Павла с акцентным визуалом */}
+          <ScrollReveal
+            variants={fadeUpItem}
+            className="relative rounded-3xl overflow-hidden border border-orange-200/60 bg-gradient-to-br from-amber-50/60 via-orange-50/40 to-yellow-50/60 shadow-[0_24px_70px_rgba(251,146,60,0.22)] flex flex-col justify-between"
+          >
+            <div className="p-5 pb-4 md:p-6 space-y-2">
+              <p className="text-[11px] uppercase tracking-[0.22em] text-orange-500/90">
+                Павел · цифровой РОП
+              </p>
+              <p className="text-sm md:text-base font-semibold text-[var(--text-primary)]">
+                Видит, где «утекают» деньги в отделе продаж, и каждый день даёт
+                управленческие подсказки.
+              </p>
+            </div>
+
+            <div className="px-5 md:px-6 pb-4 text-[11px] text-[var(--text-secondary)] space-y-1.5">
+              <p>· Следит за воронкой по всем менеджерам и каналам.</p>
+              <p>· Подсвечивает сделки и клиентов в зоне риска.</p>
+              <p>· Формирует дайджесты для собственника и РОПа.</p>
+            </div>
+
+            <div className="relative mt-1">
+              <div className="relative w-full aspect-[16/9] overflow-hidden">
+                <video
+                  className="h-full w-full object-cover"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                >
+                  <source src="/menegers/pavel.mp4" type="video/mp4" />
+                </video>
+
+                <div className="absolute left-4 bottom-3 inline-flex items-center gap-2 rounded-full px-3 py-1 text-[11px] bg-gradient-to-r from-orange-500 to-amber-500 text-white border border-orange-400/30 shadow-lg">
+                  <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
+                  Павел следит за воронкой
+                </div>
+              </div>
+            </div>
+          </ScrollReveal>
+        </ScrollReveal>
+      </Section>
+
+
 
 {/* РЕЗУЛЬТАТЫ / OUTCOMES ПОД МАРИЕЙ И ПЕТРОМ */}
 <Section id="outcomes" className="py-24">
