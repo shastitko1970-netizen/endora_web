@@ -415,7 +415,7 @@ export default function HomePage() {
               whileHover={{ boxShadow: "0 40px 100px rgba(251,146,60,0.25)" }}
               transition={{ duration: 0.3 }}
             >
-              <div className="grid lg:grid-cols-[1fr_1.5fr] gap-0">
+              <div className="grid lg:grid-cols-[1fr_1.7fr] gap-0">
                 {/* Левая часть — крупное видео Павла */}
                 <div className="relative aspect-[4/3] lg:aspect-auto lg:min-h-[600px] overflow-hidden group">
                   <motion.video
