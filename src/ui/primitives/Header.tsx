@@ -38,8 +38,8 @@ export function Header() {
           className="
             h-9 w-9 md:h-10 md:w-10
             rounded-[18px]
-               bg-[rgba(32,32,36,0.9)]        // ← стал тёмно-серый фон
-               border border-white/20 
+            bg-[rgba(32,32,36,0.9)]
+            border border-white/20 
             shadow-[0_8px_26px_rgba(15,23,42,0.25)]
             flex items-center justify-center
             backdrop-blur-[var(--glass-blur)]
@@ -66,6 +66,9 @@ export function Header() {
         </Link>
         <Link href="/petr" className="hover:opacity-70 transition">
           Пётр
+        </Link>
+        <Link href="/pavel" className="hover:opacity-70 transition">
+          Павел
         </Link>
         <Link href="/products" className="hover:opacity-70 transition">
           Продукты

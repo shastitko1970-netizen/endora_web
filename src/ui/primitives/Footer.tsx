@@ -65,6 +65,14 @@ export function Footer() {
                     Пётр · цифровой продавец
                   </Link>
                 </li>
+                <li>
+                    <Link
+                      href="/pavel"
+                      className="hover:text-[var(--gold-strong)] transition"
+                    >
+                      Павел · цифровой РОП
+                    </Link>
+                  </li>
               </ul>
             </div>
           </div>
