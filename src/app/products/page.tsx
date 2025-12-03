@@ -1,7 +1,6 @@
 // src/app/products/page.tsx
 "use client";
 
-import type { Metadata } from "next";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Button } from "@/ui/glass/Button";
@@ -13,19 +12,6 @@ import {
   fadeUpStaggerContainer,
 } from "@/lib/animations/homeVariants";
 import { useState, useEffect } from "react";
-
-
-export const metadata: Metadata = {
-  title: "Endora Core — Платформа цифровых сотрудников | Модули и возможности",
-  description: "Endora Core — мозг и шина данных компании. Подключение систем, аналитика, мониторинг, коммуникации. 6 модулей для создания цифровых сотрудников под любые задачи бизнеса.",
-  keywords: "endora core, цифровые сотрудники, AI платформа, бизнес аналитика, автоматизация процессов, интеграция систем",
-  openGraph: {
-    title: "Endora Core — Платформа цифровых сотрудников",
-    description: "Мозг и шина данных компании. 6 модулей для создания AI-сотрудников под ваши задачи.",
-    type: "website",
-    locale: "ru_RU",
-  },
-};
 
 
 export default function EndoraCoreПродуктыPage() {
