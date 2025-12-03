@@ -7,6 +7,7 @@ import Link from "next/link";
 import { Button } from "@/ui/glass/Button";
 import { Section } from "@/ui/primitives/Section";
 import { ScrollReveal } from "@/ui/primitives/ScrollReveal";
+import { OpsReglamentsArticleBody } from "./_components/OpsReglamentsArticleBody";
 import {
   fadeUp,
   fadeUpItem,
@@ -31,13 +32,16 @@ const MATERIALS = [
   },
 
   {
-    id: "ops-reglaments",
-    status: "published" as const,
-    cardBadge: "Операционка · Статья",
-    cardTitle: "Как встроить цифровых сотрудников в ежедневные регламенты",
-    cardDescription:
-      "Про то, как выглядят регламенты, чек-листы и контроль качества, когда часть работы выполняют цифровые сотрудники.",
-  },
+  id: "ops-reglaments",
+  status: "published" as const,
+  cardBadge: "Операционка · Статья",
+  cardTitle: "Как встроить цифровых сотрудников в ежедневные регламенты",
+  cardDescription:
+    "Про то, как выглядят регламенты, чек-листы и контроль качества, когда часть работы выполняют цифровые сотрудники.",
+  date: "Декабрь 2025",
+  readTime: "~9 минут чтения",
+},
+
 
 
   {
@@ -115,8 +119,18 @@ const ARTICLES = {
     title: "Зачем мы делаем цифровых сотрудников и с чего начинаем",
     meta: "Ноябрь 2025 · автор: Ярослав Бросман, CPO & Co-Founder Endora AI",
     body: <VisionArticleBody />,
+    slug: "/blog/vision",
   },
-};
+  "ops-reglaments": {
+    badge: "Операционка · Статья",
+    title: "Как встроить цифровых сотрудников в ежедневные регламенты",
+    meta:
+      "Декабрь 2025 · автор: Ярослав Бросман, CPO & Co-Founder Endora AI",
+    body: <OpsReglamentsArticleBody />,
+    slug: "/blog/ops-reglaments",
+  },
+} as const;
+
 
 export default function BlogClientPage() {
   const [activeArticleId, setActiveArticleId] = useState<string | null>(null);
@@ -308,14 +322,15 @@ export default function BlogClientPage() {
                     <span className="text-base">📄</span>
                     <span>{activeArticle.meta}</span>
                   </div>
-                  {activeArticleId === "vision" && (
+                 {activeArticle.slug && (
                     <Link
-                      href="/blog/vision"
+                      href={activeArticle.slug}
                       className="text-[11px] text-[var(--text-primary)] underline underline-offset-4 hover:no-underline"
                     >
                       Открыть на отдельной странице
                     </Link>
                   )}
+
                 </div>
               </div>
               <button
