@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "build:prod": "CI=true next build",
+    "build:prod": "node --no-warnings --max-old-space-size=4096 ./node_modules/.bin/next build && exit 0",
     "start": "next start",
     "lint": "eslint"
   },
