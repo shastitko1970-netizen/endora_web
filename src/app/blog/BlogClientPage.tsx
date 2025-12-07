@@ -14,34 +14,60 @@ import {
   fadeUpStaggerContainer,
 } from "@/lib/animations/homeVariants";
 import { VisionArticleBody } from "./_components/VisionArticleBody";
+import { VsBotArticleBody } from "./_components/VsBotArticleBody";
+import { ProcessPrepArticleBody } from "./_components/ProcessPrepArticleBody";
+
 
 /**
  * Карточки материалов блога.
  * Сейчас делаем 9 штук: 1 опубликованная, 2 анонса и 6 шаблонов "без темы".
  */
-    const MATERIALS = [
-      {
-        id: "vision",
-        status: "published" as const,
-        cardBadge: "Статья · Видение",
-        cardTitle: "Зачем бизнесу цифровые сотрудники, а не «очередной бот»",
-        cardDescription:
-          "Разбираем базовую идею Endora AI: почему мы делаем именно цифровых сотрудников, с чего начинаем и что хотим изменить в повседневной работе команд.",
-        date: "Ноябрь 2025",
-        readTime: "~7 минут чтения",
-      },
-
-      {
-        id: "ops-reglaments",
-        status: "published" as const,
-        cardBadge: "Операционка · Статья",
-        cardTitle: "Как встроить цифровых сотрудников в ежедневные регламенты",
-        cardDescription:
-          "Про то, как выглядят регламенты, чек-листы и контроль качества, когда часть работы выполняют цифровые сотрудники.",
-        date: "Декабрь 2025",
-        readTime: "~8 минут чтения",
-      },
-
+/**
+ * Карточки материалов блога.
+ * Сейчас делаем 10 штук: 4 опубликованные статьи и 6 анонсов/шаблонов.
+ */
+const MATERIALS = [
+  {
+    id: "vision",
+    status: "published" as const,
+    cardBadge: "Статья · Видение",
+    cardTitle: "Зачем бизнесу цифровые сотрудники, а не «очередной бот»",
+    cardDescription:
+      "Разбираем базовую идею Endora AI: почему мы делаем именно цифровых сотрудников, с чего начинаем и что хотим изменить в повседневной работе команд.",
+    date: "Ноябрь 2025",
+    readTime: "~7 минут чтения",
+  },
+  {
+    id: "vs-bot",
+    status: "published" as const,
+    cardBadge: "Статья · Разбор",
+    cardTitle:
+      "Цифровой сотрудник vs бот: в чём реальная разница, кроме красивого названия",
+    cardDescription:
+      "Показываем, чем цифровой сотрудник отличается от «очередного бота»: позиция в оргструктуре, глубина интеграции, метрики, управление и экономика роли.",
+    date: "Декабрь 2025",
+    readTime: "~8 минут чтения",
+  },
+  {
+    id: "ops-reglaments",
+    status: "published" as const,
+    cardBadge: "Операционка · Статья",
+    cardTitle: "Как встроить цифровых сотрудников в ежедневные регламенты",
+    cardDescription:
+      "Про то, как выглядят регламенты, чек-листы и контроль качества, когда часть работы выполняют цифровые сотрудники.",
+    date: "Декабрь 2025",
+    readTime: "~8 минут чтения",
+  },
+  {
+    id: "process",
+    status: "published" as const,
+    cardBadge: "Практика · Статья",
+    cardTitle: "Как подготовить процессы к цифровому сотруднику",
+    cardDescription:
+      "Пошаговый разбор: от аудита процессов и данных до настройки голоса, маршрутизации и метрик, чтобы цифровой сотрудник не превратился в дорогую игрушку.",
+    date: "Декабрь 2025",
+    readTime: "~8 минут чтения",
+  },
   {
     id: "cases",
     status: "soon" as const,
@@ -51,16 +77,6 @@ import { VisionArticleBody } from "./_components/VisionArticleBody";
       "Подборка кейсов: как Мария и Пётр закрывают звонки, записи, письма и follow-up, какие метрики меняются и какие выводы мы делаем вместе с клиентами.",
     footerNote: "Материал в подготовке.",
   },
-  {
-    id: "process",
-    status: "soon" as const,
-    cardBadge: "Практика · Скоро",
-    cardTitle: "Как подготовить процессы к цифровому сотруднику",
-    cardDescription:
-      "Серия материалов о том, как описать воронку, привести в порядок скрипты и не утонуть в настройках, когда появляется новый цифровой сотрудник.",
-    footerNote: "Материал в подготовке.",
-  },
-
   {
     id: "salesplaybook",
     status: "soon" as const,
@@ -108,6 +124,10 @@ import { VisionArticleBody } from "./_components/VisionArticleBody";
   },
 ];
 
+
+/**
+ * Контент статей для модальных окон.
+ */
 /**
  * Контент статей для модальных окон.
  */
@@ -119,7 +139,13 @@ const ARTICLES = {
     route: "/blog/vision",
     body: <VisionArticleBody />,
   },
-
+  "vs-bot": {
+    badge: "Статья · Разбор",
+    title: "Цифровой сотрудник vs бот: в чём реальная разница, кроме красивого названия",
+    meta: "Декабрь 2025 · автор: Ярослав Бросман, CPO & Co-Founder Endora AI",
+    route: "/blog/vs-bot",
+    body: <VsBotArticleBody />,
+  },
   "ops-reglaments": {
     badge: "Операционка · Статья",
     title: "Как встроить цифровых сотрудников в ежедневные регламенты",
@@ -127,7 +153,15 @@ const ARTICLES = {
     route: "/blog/ops-reglaments",
     body: <OpsReglamentsArticleBody />,
   },
+  process: {
+    badge: "Практика · Статья",
+    title: "Как подготовить процессы к цифровому сотруднику",
+    meta: "Декабрь 2025 · автор: Ярослав Бросман, CPO & Co-Founder Endora AI",
+    route: "/blog/process-prep",
+    body: <ProcessPrepArticleBody />,
+  },
 } as const;
+
 
 
 export default function BlogClientPage() {
