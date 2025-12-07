@@ -1,5 +1,3 @@
-// src/app/blog/BlogClientPage.tsx
-
 "use client";
 
 import { useEffect, useState } from "react";
@@ -59,7 +57,7 @@ const MATERIALS = [
     readTime: "~8 минут чтения",
   },
   {
-    id: "process",
+    id: "process-prep",
     status: "published" as const,
     cardBadge: "Практика · Статья",
     cardTitle: "Как подготовить процессы к цифровому сотруднику",
@@ -153,7 +151,7 @@ const ARTICLES = {
     route: "/blog/ops-reglaments",
     body: <OpsReglamentsArticleBody />,
   },
-  process: {
+  "process-prep": {
     badge: "Практика · Статья",
     title: "Как подготовить процессы к цифровому сотруднику",
     meta: "Декабрь 2025 · автор: Ярослав Бросман, CPO & Co-Founder Endora AI",
